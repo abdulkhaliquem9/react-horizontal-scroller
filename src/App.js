@@ -1,9 +1,11 @@
-import Scroller from './components/scroller';
+// import Scroller from './components/scroller';
+import DateCarousel from './components/DateCarousel';
 
 function App() {
   return (
-    <div>
-     <Scroller/>
+    <div className='App'>
+     {/* <Scroller/> */}
+     <DateCarousel/>
     </div>
   );
 }

@@ -1,0 +1,87 @@
+//scss
+
+//desktop view
+.date-range {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  box-sizing: border-box;
+  width: 341px;
+  height: 607px;
+  // border: 1px solid gray;
+  box-shadow: 3px 3px 5px gray;
+  padding: 24px;
+
+  .date-range-content {
+    // border: 1px solid rebeccapurple;
+    background-color: lightgray;
+
+    .month-scroller {
+      display: flex;
+      flex-direction: column;
+      // width: 325px;
+      // overflow-x: scroll;
+
+      .content {
+        display: flex;
+        overflow-x: scroll;
+
+        .chip {
+          color: "black";
+          width: 56px;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 8px 12px;
+          height: 32px;
+          margin-right: 24px;
+          /* Gradient */
+          border-radius: 50.3195px;
+          // background: blue;
+        }
+        .inactive-chip {
+          background: #f5f5f5;
+        }
+
+        .active-chip {
+          background: linear-gradient(115.52deg, #ff8058 19.62%, #e12331 82.1%);
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 100%;
+          width: 54px;
+          /* identical to box height, or 16px */
+
+          letter-spacing: 0.02em;
+          font-feature-settings: "pkna" on;
+
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+//mobile view
+@media (max-width: 900px) {
+  .date-range {
+    width: 375px;
+    background-color: aquamarine;
+
+    .date-range-content {
+      .month-scroller {
+        // width: 293px;
+
+        .inactive-chip {
+          width: 56px;
+          height: 32px;
+          margin-right: 35px;
+        }
+      }
+    }
+  }
+}
