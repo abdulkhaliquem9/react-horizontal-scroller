@@ -41,7 +41,7 @@ export default function(){
                         urls.map((el,i) => (
                             <li key={i} className={
                                 `carousel__slide ${currentSlide === i ? sideInClass : 
-                                    (currentSlide === i+1? '' : 'hide')}`
+                                    (currentSlide === i+1? 'hide' : 'hide')}`
                                     }>
                                 <img className='carousel__image' src={(el.url)} alt={el.url}></img>
                             </li>
