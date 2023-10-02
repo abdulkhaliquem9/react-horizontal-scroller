@@ -1,13 +1,15 @@
-import Scroller from './components/scroller';
-import DateCarousel from './components/DateCarousel';
-import ScrollBanner from "./components/ScrollBanner";
+// import Scroller from './components/scroller';
+// import DateCarousel from './components/DateCarousel';
+// import ScrollBanner from "./components/ScrollBanner";
+import Carousel from './components/Carousel';
 
 function App() {
   return (
     <div className='App'>
-     <Scroller/>
+     {/* <Scroller/>
      <DateCarousel/>
-     <ScrollBanner/>
+     <ScrollBanner/> */}
+     <Carousel/>
     </div>
   );
 }
