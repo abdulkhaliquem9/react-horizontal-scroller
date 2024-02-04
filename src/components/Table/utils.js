@@ -31,13 +31,19 @@ export const sortData = (a, b, sortByColumn, orderBy) => {
     }
 }
 
-export const parseTableData = (data = [], rowsPerPage) => {
+export const parseTableData = (data = [], rowsPerPage, currentPage) => {
     const pageWiseTableData = []
     if(data.length <= rowsPerPage) {
+        let countLabel = ``
+        if(data.length > 0){
+            countLabel = `1 - ${data.length} of ${data.length} Items`
+        }
         return {
             data: [ data ],
             totalPage: 1,
-            rawData: data
+            rawData: data,
+            pages: [1],
+            countLabel
         }
     } else {
         let tempArr = []
@@ -50,46 +56,27 @@ export const parseTableData = (data = [], rowsPerPage) => {
             tempArr.push(data[i])
            }
         }
-        
+
         //flush the tempArr if any data exist
         if(tempArr.length > 0){
             pageWiseTableData.push(tempArr)
             tempArr = []
         }
-
-        return {
-            data: pageWiseTableData,
-            totalPages: pageWiseTableData.length,
-            rawData: data
+        const pages = []
+        for(let i=1; i <= pageWiseTableData.length; i++){
+            pages.push(i)
         }
-    }
-}
-
-export const parseTableData2 = (data = [], rowsPerPage) => {
-    const pageWiseTableData = []
-    if(data.length <= rowsPerPage) {
-        return {
-            data: [ data ],
-            totalPage: 1,
-            rawData: data
-        }
-    } else {
-        let rowsCount = 0;
-        let tempArr = []
-        for(let i = 0; i < data.length; i++) {
-            tempArr.push(data[i])
-            if(rowsCount === rowsPerPage - 1) {
-                rowsCount = 0;
-                pageWiseTableData.push(tempArr)
-                tempArr = [];
-            } else {
-                rowsCount ++;
-            }
+        let countLabel = ``
+        if(data.length > 0){
+            const initialCount = (currentPage * rowsPerPage) + 1
+            countLabel = `${initialCount} - ${(initialCount - 1) + pageWiseTableData[currentPage].length} of ${data.length} Items`
         }
         return {
             data: pageWiseTableData,
             totalPages: pageWiseTableData.length,
-            rawData: data
+            rawData: data,
+            pages,
+            countLabel
         }
     }
 }
