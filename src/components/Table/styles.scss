@@ -20,11 +20,17 @@
                     // display: flex;
                     .table-header-cell {
                         display: flex;
+                        align-items: center;
                         .sort-icons {
                             display: flex;
                             flex-direction: column;
+                            svg {
+                                width: 20px;
+                                height: 20px;
+                            }
                             span {
                                 width: fit-content;
+                                margin-left: 4px;
                             }
                         }
 

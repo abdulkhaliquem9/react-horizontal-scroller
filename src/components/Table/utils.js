@@ -1,6 +1,7 @@
 import { ASCENDING, DESCENDING, tableColumns } from './constants';
 
 export const sortData = (a, b, sortByColumn, orderBy) => {
+    try {
     if (typeof a[sortByColumn] === 'number') {
         if (orderBy === ASCENDING)
             return a[sortByColumn] - b[sortByColumn]
@@ -28,6 +29,10 @@ export const sortData = (a, b, sortByColumn, orderBy) => {
             }
             return 0;
         }
+    }
+    }
+    catch(error){
+        console.log('sort error', error)
     }
 }
 
