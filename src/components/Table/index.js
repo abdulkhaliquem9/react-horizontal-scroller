@@ -59,7 +59,27 @@ export default function BasicTable(props) {
  
   return (
     <div className='table-container'>
-  
+    <div className='table-filters'>
+      <select className="sort" name="sort" id="sort">
+      <option disabled value="" selected>sort By</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+
+      <select className="filter" name="filter" id="filter">
+        <option disabled value="" selected>Filter By</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+
+    <div className="search">
+      <label for="lname">Search</label>
+      <input type="text" id="lname" name="lname"></input>
+    </div>
+
+    </div>
     <div className='table-wrapper'>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} >

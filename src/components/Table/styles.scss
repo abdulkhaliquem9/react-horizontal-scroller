@@ -6,6 +6,34 @@
     flex-direction: column;
     justify-content: space-between;
 
+    .table-filters {
+        // height: 100px;
+        padding: 20px;
+        display: flex;
+        .sort {
+            margin: 0 5px;
+            border: 1px solid black;
+        }
+        .filter {
+            margin: 0 5px;
+            border: 1px solid black;
+        }
+        .search {
+            margin: 0 5px;
+            input {
+                border: 1px solid black;
+            }
+        }
+        .sort:focus, .sort:focus-visible,
+        .filter:focus, .filter:focus-visible,
+        .search:focus, .search:focus-visible {
+            border: 1px solid black;
+            border-radius: 0;
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
     .table-wrapper {
         height: 100%;
         // outline: 1px solid lime;
